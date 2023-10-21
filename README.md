@@ -41,12 +41,21 @@ The project employs SQL queries and data analysis techniques to extract valuable
 **Key Findings and Insights:**
 
 The project uncovers several important insights:
+
 Top-Spending Cities: The project identifies the top 5 cities with the highest credit card spends and their percentage contributions to the total spending. This information is crucial for regional targeting and marketing.
+
 Peak Spending Months: It reveals the highest spending months for various card types, enabling effective resource allocation.
+
 Transaction Milestones: The project tracks transaction details when cumulative spending reaches specific milestones, aiding in monitoring and reporting.
+
+
 Lowest Percentage Spend: The city with the lowest percentage spending for a Gold card type is identified, aiding in city-level marketing strategies.
 Expense Types by City: It showcases the dominant and least dominant expense types in each city, helping businesses tailor their strategies.
+
 Female Spending: The project calculates the percentage contribution of female spending for various expense types, which is valuable for gender-based marketing.
+
 Growth Analysis: It identifies card and expense type combinations with the highest month-over-month growth, guiding strategic decisions.
+
 Weekend Spending: The project reveals cities with the highest spend-to-transaction ratio on weekends, useful for location-based marketing.
+
 Fastest Growth: It identifies the city where customers reached their 500th transaction soonest after the first transaction, providing insights into customer acquisition.
