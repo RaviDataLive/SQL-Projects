@@ -6,19 +6,30 @@ Project Overview: **Analyzing Credit Card Transaction Data**
 Skills used: Joins, CTE's, Temp Tables, Windows Functions, Aggregate Functions, Converting Data Types
 
 **Introduction:**
+
 The "Analyzing Credit Card Transaction Data" project is designed to gain valuable insights from credit card transaction data. By leveraging SQL queries and data analysis, this project offers an in-depth understanding of spending patterns, card usage, and key performance indicators.
 
 Objectives:
 **The primary objectives of this project are to:**
+
 1-Identify top-spending cities and their percentage contributions to total credit card spends.
+
 2-Determine peak spending months and corresponding amounts for different card types.
+
 3-Analyze transaction details when cumulative spending reaches specific milestones.
+
 4-Find the city with the lowest percentage spending for a particular card type.
+
 5-Uncover the dominant and least dominant expense types in each city.
+
 6-Calculate the percentage contribution of female spending for various expense types.
+
 7-Discover the card and expense type combinations with the highest month-over-month growth.
+
 8-Identify the city with the highest spend-to-transaction ratio on weekends.
+
 9-Find the city that reached its 500th transaction soonest after the first transaction.
+
 
 **Data Source:**
 The project relies on a dataset of credit card transactions, containing information on transaction dates, card types, cities, expenses, and transaction amounts.
