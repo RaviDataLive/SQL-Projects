@@ -1,4 +1,4 @@
-- > Write a query to print the top 5 cities with the highest credit card spends and their percentage contribution to total credit card spends.
+- > Top 5 Cities with highest credit card spends and their percentage contribution to total credit card spends.
 
 WITH CTE AS
   (SELECT *,
@@ -14,7 +14,7 @@ GROUP BY CITY
 HAVING COUNT(1) = 2
 ORDER BY Duration ;
 
--> Write a query to print the highest spend month and the amount spent in that month for each card type.
+-> Highest spend month and the amount spent in that month for each Card type.
   
 WITH cte AS
   (SELECT card_type,
@@ -34,7 +34,7 @@ SELECT *
 FROM CTE1
 WHERE rank_mnth =1;
 
--> Write a query to print the transaction details (all columns from the table) for each card type when it reaches a cumulative of 1000000 total spends.
+-> Transaction details (all columns from the table) for each card type when it reaches a cumulative of 1000000 total spends.
   
 WITH CTE AS
   (SELECT *,
@@ -50,7 +50,8 @@ FROM
    WHERE cumm_amount >= 1000000) A
 WHERE rn = 1;
 
--> To find the city with the lowest percentage spend for the Gold Card type, write a query.
+-> City with the lowest percentage spend for the Gold Card type.
+  
 WITH CTE AS
   (SELECT city,
           SUM(amount) AS total_spend
@@ -66,7 +67,7 @@ FROM cte
 JOIN cte1 ON 1=1
 ORDER BY diff ;
 
--> Write a query to print 3 columns:  city, highest_expense_type , lowest_expense_type (example format : Delhi , bills, Fuel)
+-> Print 3 columns:  city, highest_expense_type , lowest_expense_type (example format : Delhi , bills, Fuel)
 
 WITH CTE AS
   (SELECT city,
@@ -92,7 +93,7 @@ SELECT City,
 FROM CTE1
 GROUP BY city;
 
--> Write a query to find percentage contribution of spends by females for each expense type
+-> To find percentage contribution of spends by females for each expense type
 
 WITH CTE AS
   (SELECT exp_type,
@@ -151,7 +152,7 @@ WHERE date = '201401'
 ORDER BY mom DESC ;
 
 -> During Weekends which city has highest total spend to total no of transcations ratio 
------------------------------------------------------------------------------
+
 SELECT TOP 1 City,
            1.0*SUM(amount)/COUNT(1) AS ratio
 FROM credit_card_transcations 
