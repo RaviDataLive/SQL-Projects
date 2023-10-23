@@ -1,5 +1,5 @@
 
---1 which team has won the maximum gold medals over the years.
+->Teams has won the maximum gold medals over the years.
 
 SELECT TOP 1 team,
            COUNT(DISTINCT event) AS total_cnt
@@ -9,12 +9,8 @@ WHERE medal = 'Gold'
 GROUP BY team
 ORDER BY total_cnt DESC ;
 
-
--------------------------------------------------------------------------------
-
---2 for each team print total silver medals and year in which they won maximum silver medal..output 3 columns
--- team,total_silver_medals, year_of_max_silver
---------------------------------------------
+->Teams peak years for winning silver medals are revealed, offering insights into their historical performances
+           
 WITH cte AS
   (SELECT a.team,
           ae.year,
@@ -33,11 +29,9 @@ SELECT team,
            END) AS year_of_max_silver
 FROM cte
 GROUP BY team;
----------------------------------------------
 
---3 which player has won maximum gold medals  amongst the players 
---which have won only gold medal (never won silver or bronze) over the years
------------------------------------------------------------------------
+ -> Player has won maximum gold medals  amongst the players which have won only gold medal (never won silver or bronze) over the years
+
 WITH cte AS
   (SELECT name,
           medal
@@ -55,9 +49,7 @@ WHERE name NOT IN
 GROUP BY name
 ORDER BY no_of_gold_medals DESC;
 
------------------------------------------------------------------------
---4 in each year which player has won maximum gold medal . Write a query to print year,player name 
---and no of golds won in that year . In case of a tie print comma separated player names.
+-> Each year which player has won maximum gold medal .Print year,player name and no of golds won in that year . In case of a tie print comma separated player names.
 
 WITH CTE AS
   (SELECT name,
@@ -81,9 +73,8 @@ WHERE RNK = 1
 GROUP BY YEAR,
          total ;
 
---5 in which event and year India has won its first gold medal,first silver medal and first bronze medal
---print 3 columns medal,year,sport
------------------------------------------------------
+-> In which event and year India has won its first gold medal,first silver medal and first bronze medal
+           
 WITH CTE AS
   (SELECT medal,
           YEAR,
@@ -103,10 +94,8 @@ FROM
 WHERE rnk = 1
   AND NOT medal = 'NA';
 
------------------------------------------
 
-
---6 find players who won gold medal in summer and winter olympics both.
+-> Players who won gold medal in summer and winter olympics both.
 
 -----------------------
 SELECT a.name
@@ -119,9 +108,7 @@ WHERE (medal= 'Gold'
 GROUP BY name
 HAVING COUNT(DISTINCT season)=2
 
-
----------------------------------------
---7 find players who won gold, silver and bronze medal in a single olympics. print player name along with year.
+-> Players who won gold, silver and bronze medal in a single olympics.
 -------------------------------
 SELECT name,
        YEAR
@@ -135,10 +122,9 @@ GROUP BY name,
 HAVING COUNT(DISTINCT MEDAL) = 3
 ORDER BY name,
          YEAR ;
-------------------------------------------
 
---8 find players who have won gold medals in consecutive 3 summer olympics in the same event . Consider only olympics 2000 onwards. 
---Assume summer olympics happens every 4 year starting 2000. print player name and event name.
+
+-> Players who have won gold medals in consecutive 3 summer olympics in the same event . Consider only olympics 2000 onwards. Assume summer olympics happens every 4 year starting 2000. print player name and event name.
 
 WITH CTE AS
   (SELECT name,
